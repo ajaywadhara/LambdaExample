@@ -23,6 +23,7 @@ public class S3EventHandler implements RequestHandler<S3Event, Boolean> {
     @Override
     public Boolean handleRequest(S3Event input, Context context) {
         final LambdaLogger logger = context.getLogger();
+
         //check if are getting any record
         if(input.getRecords().isEmpty()){
             logger.log("No records found");
